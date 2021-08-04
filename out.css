@@ -1,0 +1,11 @@
+.test-pseudo:pseudo {display: none
+}@media (min-width: 640px) {.test-pseudo:pseudo {display: none
+    }
+}
+
+.test-class.class {display: none
+}
+
+@media (min-width: 640px) { {display: none
+    }
+}
