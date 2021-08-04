@@ -7,19 +7,3 @@
   @apply class:hidden;
   @apply sm:class:hidden;
 }
-
-    /*
-    addVariant('disabled', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`disabled${separator}${className}`)}:disabled`
-      })
-    })
-    .sm\:on\:bg-gray-100.on {
-      --tw-bg-opacity: 1;
-      background-color: rgba(248,247,247,var(--tw-bg-opacity))
-    }
-    .on\:bg-gray-100.sm\:on {
-      --tw-bg-opacity: 1;
-      background-color: rgba(248,247,247,var(--tw-bg-opacity))
-    }
-    */
