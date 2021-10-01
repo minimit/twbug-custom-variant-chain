@@ -21,6 +21,20 @@
 /*
 
 
+  Chaining tailwind pseudo variants works properly
+
+  
+*/
+
+/*
+#test:first-child:hover */
+#test {
+  @apply first:hover:hidden;
+}
+
+/*
+
+
   Custom pseudo selectors works fine only if you use CUSTOM AFTER tailwind ones
     otherwise it prints first one only
 
