@@ -1,4 +1,4 @@
-# twbug-class-variant-chain
+# twbug-custom-variant-chain
 
 - `yarn install`
 - check `tailwind-plugin.js` and `src/index.css`

@@ -1,9 +1,79 @@
-.test-pseudo {
-  @apply pseudo:hidden;
-  @apply sm:pseudo:hidden;
+/*
+
+
+  Simple custom variants works fine
+
+
+*/
+
+/*
+#test:pseudocustom */
+#test {
+  @apply pseudocustom:hidden;
 }
 
-.test-class {
+/*
+.class#test */
+#test {
   @apply class:hidden;
-  @apply sm:class:hidden;
+}
+
+/*
+
+
+  Custom pseudo selectors works fine only if you use CUSTOM AFTER tailwind ones
+    otherwise it prints first one only
+
+  
+*/
+
+/*
+#test:first-child:pseudocustom */
+#test {
+  @apply first:pseudocustom:hidden;
+}
+
+/* WRONG
+#test:pseudocustom:first-child */
+#test {
+  @apply pseudocustom:first:hidden;
+}
+
+/*
+
+
+  With custom classes and tailwind variants it prints first one only
+    but if you put custom classes AFTER tailwind ones does something strange
+
+  
+*/
+
+/* WRONG
+.class#test:first-child */
+#test {
+  @apply first:class:hidden;
+}
+
+/* WRONG
+.class#test:first-child */
+#test {
+  @apply class:first:hidden;
+}
+
+/*
+
+
+  With only custom pseudo and classes it prints first one only
+
+  
+*/
+
+/*  */
+#test {
+  @apply pseudocustom:class:hidden;
+}
+
+/*  */
+#test {
+  @apply class:class-another:hidden;
 }

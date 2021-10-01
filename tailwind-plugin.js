@@ -3,15 +3,21 @@ const plugin = require('tailwindcss/plugin')
 module.exports = plugin.withOptions(() => {
   return function ({ addVariant, e }) {
 
-    addVariant('pseudo', ({ modifySelectors, separator }) => {
+    addVariant('pseudocustom', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`pseudo${separator}${className}`)}:pseudo`
+        return `.${e(`pseudocustom${separator}${className}`)}:pseudocustom`
       })
     })
 
     addVariant('class', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`class${separator}${className}`)}.class`
+        return `.class.${e(`class${separator}${className}`)}`
+      })
+    })
+
+    addVariant('class-another', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.class-another.${e(`class-another${separator}${className}`)}`
       })
     })
   }

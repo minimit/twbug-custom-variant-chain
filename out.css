@@ -1,11 +1,79 @@
-.test-pseudo:pseudo {display: none
-}@media (min-width: 640px) {.test-pseudo:pseudo {display: none
-    }
+/*
+
+
+  Simple custom variants works fine
+
+
+*/
+
+/*
+#test:pseudocustom */
+#test:pseudocustom {
+    display: none
 }
 
-.test-class.class {display: none
+/*
+.class#test */
+.class#test {
+    display: none
 }
 
-@media (min-width: 640px) { {display: none
-    }
+/*
+
+
+  Custom pseudo selectors works fine only if you use CUSTOM AFTER tailwind ones
+    otherwise it prints first one only
+
+  
+*/
+
+/*
+#test:first-child:pseudocustom */
+#test:first-child:pseudocustom {
+    display: none
+}
+
+/* WRONG
+#test:pseudocustom:first-child */
+#test:pseudocustom {
+    display: none
+}
+
+/*
+
+
+  With custom classes and tailwind variants it prints first one only
+    but if you put custom classes AFTER tailwind ones does something strange
+
+  
+*/
+
+/* WRONG
+.class#test:first-child */
+.first\:class:first-child#test:first-child {
+    display: none
+}
+
+/* WRONG
+.class#test:first-child */
+.class#test {
+    display: none
+}
+
+/*
+
+
+  With only custom pseudo and classes it prints first one only
+
+  
+*/
+
+/*  */
+#test:pseudocustom {
+    display: none
+}
+
+/*  */
+.class#test {
+    display: none
 }
